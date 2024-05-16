@@ -1,0 +1,83 @@
+oracle_developer
+
+-- esto es un comentario
+/* comentario de varias lineas*/
+
+describe ....tabla; // muestra la tabla me describe lo que hay dentro
+
+
+//CREACION DE TABLA////
+create table empleado(
+id_empleado int not null,
+nombre varchar2 (20),
+direccion varchar2(50),
+id_documento varchar2(10),
+sueldo nomber(6,2)// es de 6cifras con dos decimales,
+fecha_nacimiento date
+);
+
+
+insert into empleado values(003, 'ana','avenida principal 350','213213213213',4000.00,to_date('10/03/1988','dd/mm/yyyy´));/////// 
+
+select * from empleado;
+
+
+//////////******CONSULTAS****////////////
+select *
+from employees
+where country = 'USA'
+///////******DELETE******/////////// SE PUEDE RECUPERAR LOS DATOS CON ROLBACK;
+delete * from agenda
+where nombre = 'Juan';
+
+//////****UPDATE****///////
+update articulos set nombre = 'impresora' where codigo = 8;
+
+UPDATE ARTICULOS SET NOMBRE = 'teclado', precio= '600'
+where codigo = 2;//////dos campos a la vez
+
+
+UPDATE articulos set precio=1000;//////todos los precios de la tabla 
+
+/////////////////////*****NULL****/////////////////////
+SELET * FROM MEDICAMENTOS WHERE LABORATORIO IS NOT NULL;
+
+/////////////*****PRIMARY KEY*******/////////////////////
+CREATE TABLE USUARIO(
+NOMBRE VARCHAR(20) NO NULL,
+CLAVE VARCHAR2(20) NO NULL,
+PRIMARY KEY(NOMBRE)
+);
+
+/////////****TRUNCATE TABLE*******//////// BORRA LOS REGISTROS DE LA TABLA
+/////********DROP TABLES ****///////
+BORRA LA TABLA
+
+TRUNCATE TABLE ARTICULOS; /////SE BORRA SIN PODER RECUPERAR LOS DATOS NO SE PUEDE
+
+///////////////*****DEFAULT*****/////////////
+CUANDO SE CREE LA TABLA EL CAMPO LO PONES DEFAUL
+CREATE TABLE LIBROS(
+TITULO VARCHAR2(40) DEFAULT 'DESCONOCIDO',
+CANTIDA NUMBER (3) DEFAULT 0
+);
+INSER IMTO LIBROS VALUES('SSS',DEFAULT); SERIA 0
+INSER IMTO LIBROS VALUES(DEFAULT,2); SERIA DESCONOCIDO
+
+/////////////////*********CONCATENAR*******//////////////////
+
+SELECT TITULO || '-' || AUTOR FROM LIBROS;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
